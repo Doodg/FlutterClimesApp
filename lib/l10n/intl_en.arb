@@ -1,0 +1,12 @@
+{
+  "AppName": "Clime App",
+  "Location": "City",
+  "Temp": "Temperature",
+  "TempNotAvailable": "Temp not available",
+  "CelsiusMark": "°C",
+  "FeelLike": "Feel Like",
+  "Humidity": "Humidity",
+  "Sunrise": "Sunrise",
+  "Sunset": "Sunset",
+  "Wind": "Wind Speed"
+}
