@@ -83,7 +83,7 @@ class HomePageState extends State<HomePage> {
                           print(snapshot.hasError);
                           return Container(
                             child: Center(
-                              child: Text("Reading from the sky...."),
+                              child: Text("Connecting..."),
                             ),
                           );
                         } else {
