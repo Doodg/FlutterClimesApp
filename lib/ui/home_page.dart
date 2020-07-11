@@ -35,18 +35,11 @@ class HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(right: 8.0),
               child: GestureDetector(
                 onTap: () {
-//                  position = getCurrent();
+                  _initCurrentLocation();
                 },
                 child: Icon(Icons.refresh),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: GestureDetector(
-                onTap: () {},
-                child: Icon(Icons.settings),
-              ),
-            )
           ],
         ),
         body: FutureBuilder<GeolocationStatus>(
@@ -58,15 +51,16 @@ class HomePageState extends State<HomePage> {
             }
 
             if (snapshot.data == GeolocationStatus.denied) {
-              return Container(
-                child: Text(
-                  'Access to location denied Allow access to the location services for this App using the device settings.',
-                  style: TextStyle(color: Colors.amber),
+              return Center(
+                child: Container(
+                  child: Text(
+                    'Access to location denied Allow access to the location services for this App using the device settings.',
+                    style: TextStyle(color: Colors.amber),
+                  ),
                 ),
               );
             }
             if (snapshot.data == GeolocationStatus.granted) {
-//            "29.9920526", "31.276663"
               return Container(
                 child: FutureBuilder<WeatherMainResponse>(
                     future: Provider.of<RetrofitClient>(context, listen: false)
