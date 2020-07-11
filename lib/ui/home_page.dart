@@ -74,23 +74,21 @@ class HomePageState extends State<HomePage> {
                             child: CircularProgressIndicator(),
                           ),
                         );
+                      } else if (snapshot.hasData) {
+                        return Container(
+                          child: WeatherWidget(snapshot.data, context),
+                        );
+                      } else if (snapshot.hasError) {
+                        print(snapshot.hasError);
+                        return Container(
+                          child: Center(
+                            child: Text("Connecting...."),
+                          ),
+                        );
                       } else {
-                        if (snapshot.hasData) {
-                          return Container(
-                            child: WeatherWidget(snapshot.data, context),
-                          );
-                        } else if (snapshot.hasError) {
-                          print(snapshot.hasError);
-                          return Container(
-                            child: Center(
-                              child: Text("Connecting..."),
-                            ),
-                          );
-                        } else {
-                          return Container(
-                            child: Text("Something went wrong.."),
-                          );
-                        }
+                        return Container(
+                          child: Text("Something went wrong.."),
+                        );
                       }
                     }),
               );
@@ -110,9 +108,7 @@ class HomePageState extends State<HomePage> {
         desiredAccuracy: LocationAccuracy.medium,
       ).then((position) {
         _currentPosition = position;
-      }).catchError((e) {
-
-      });
+      }).catchError((e) {});
   }
 }
 

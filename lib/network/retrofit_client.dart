@@ -19,5 +19,5 @@ abstract class RetrofitClient {
   @GET("/weather")
   Future<WeatherMainResponse> getWeather(
       @Query("lat") String lat, @Query("lon") String lon,
-      {@Query("appid") String appKey = "13988052f5fcc853f82263ed18e7bab6"});
+      {@Query("appid") String appKey = "Add your key"});
 }
