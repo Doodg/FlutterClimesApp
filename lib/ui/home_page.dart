@@ -109,11 +109,9 @@ class HomePageState extends State<HomePage> {
       ..getCurrentPosition(
         desiredAccuracy: LocationAccuracy.medium,
       ).then((position) {
-        if (mounted) {
-          setState(() => _currentPosition = position);
-        }
+        _currentPosition = position;
       }).catchError((e) {
-        //
+
       });
   }
 }
