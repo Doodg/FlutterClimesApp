@@ -11,3 +11,6 @@ A flutter project to display the current temperature  using GPS
 - [Pretty Dio Logger](https://pub.dev/packages/pretty_dio_logger)
 - [Geolocator](https://pub.dev/packages/geolocator)
 - [Flutter l10n](https://pub.dev/packages/flutter_l10n)
+
+## Contribution
+Feel free to fork and work on the project 
